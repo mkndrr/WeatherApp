@@ -18,7 +18,7 @@ body {
 }
 
 .main {
-    height: 55vh;
+    max-height: 55vh; /* Максимальная высота для больших экранов */
     background-image: url('img/clouds.jpg');
     background-size: cover;
     box-shadow: 0px 0px 50px 10px rgba(62, 72, 105, 0.8);
@@ -35,10 +35,11 @@ body {
     text-align: center;
     color: rgb(230, 223, 223);
     padding: 20px; /* Добавлено отступы для мобильных устройств */
+    overflow: auto; /* Позволяет прокручивать содержимое, если оно выходит за пределы блока */
 }
 
 .form {
-    height: auto; /* Изменено для адаптивности */
+    width: 100%; /* Изменено для адаптивности */
     padding: 20px; /* Уменьшены отступы для мобильных устройств */
     border-top: 2px solid #113a65;
     border-bottom: 2px solid #113a65;
@@ -99,18 +100,20 @@ button:active {
     font-size: 16px;
     text-align: left;
     color: rgb(230, 223, 223);
+    overflow-wrap: break-word; /* Позволяет переносить длинные слова */
 }
 
 .error {
     color: rgb(230, 223, 223);
     font-weight: bold;
     font-size: 16px;
+    overflow-wrap: break-word; /* Позволяет переносить длинные слова */
 }
 
 /* Медиазапросы для мобильных устройств */
 @media (max-width: 768px) {
     .main {
-        height: auto; /* Позволяет элементу адаптироваться к содержимому */
+        max-height: auto; /* Позволяет элементу адаптироваться к содержимому */
         padding: 10px; /* Уменьшены отступы для мобильных устройств */
     }
 
